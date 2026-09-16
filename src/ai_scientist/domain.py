@@ -60,6 +60,13 @@ class Task(Record):
 
 
 @dataclass(slots=True)
+class Note(Record):
+    body: str = ""
+    project_id: str | None = None
+    category: str = "note"
+
+
+@dataclass(slots=True)
 class Experiment(Record):
     project_id: str | None = None
     question: str = ""
@@ -105,4 +112,3 @@ class Claim(Record):
     statement: str = ""
     evidence_ids: list[str] = field(default_factory=list)
     validation: str = "unvalidated"
-

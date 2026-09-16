@@ -1,0 +1,6 @@
+# Initial preferences. Adapt communication choices using explicit human feedback.
+quick_question_channel: chat
+explanation_channel: email
+question_frequency: selective
+batch_related_questions: true
+daily_briefing_focus: forward_progress

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ada · Communications</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header><p>AI Scientist</p><h1>Communications workspace</h1>
+    <p>Review email, event drafts, and approval status. Use the terminal to make changes.</p>
+  </header>
+  <nav aria-label="Workspace views">
+    <button data-view="drafts">Email drafts</button>
+    <button data-view="mail">Imported mail</button>
+    <button data-view="calendar">Event drafts</button>
+    <button data-view="contacts">Contacts</button>
+    <button data-view="approvals">Approvals</button>
+    <button data-view="briefings">Daily priorities</button>
+  </nav>
+  <main><h2 id="heading">Email drafts</h2><p id="status" role="status"></p>
+    <section id="items" aria-label="Records"></section>
+  </main>
+</body>
+</html>

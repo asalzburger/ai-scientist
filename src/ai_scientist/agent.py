@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from .communications.preferences import CommunicationPreferences
 from .config import Settings, load_yaml
 from .context import ContextBuilder
 from .storage import SQLiteStore
@@ -15,10 +16,23 @@ class ScientistAgent:
 
     def instructions(self) -> str:
         template = (self.settings.root / "prompts/scientist.md").read_text(encoding="utf-8")
-        return template.format(
+        instructions = template.format(
             name=self.identity["name"],
             group=self.identity["group"],
             mission=self.identity["mission"],
+        )
+        preferences = CommunicationPreferences.model_validate(
+            load_yaml(self.settings.root / "config/communication.yaml")
+        )
+        communication = (self.settings.root / "prompts/communication.md").read_text(
+            encoding="utf-8"
+        )
+        return (
+            instructions
+            + "\n\n"
+            + communication
+            + "\n\nCommunication preferences:\n"
+            + preferences.model_dump_json()
         )
 
     def ask(self, question: str, client: Any | None = None) -> str:
