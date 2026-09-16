@@ -12,6 +12,10 @@ dependencies = [
   "openai>=2.0",
   "PyYAML>=6.0",
   "typer>=0.12",
+  "pydantic>=2.0,<3",
+  "icalendar>=7.3,<8",
+  "python-dateutil>=2.9,<3",
+  "caldav>=3.3,<4",
 ]
 
 [project.optional-dependencies]
@@ -28,8 +32,8 @@ packages = ["src/ai_scientist"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "--import-mode=importlib"
 
 [tool.ruff]
 line-length = 100
 target-version = "py311"
-

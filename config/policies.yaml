@@ -1,5 +1,7 @@
 default: deny
 actions:
+  read_mailbox: autonomous
+  read_calendar: autonomous
   search_literature: autonomous
   read_repository: autonomous
   summarize_meeting: autonomous
@@ -18,4 +20,3 @@ actions:
   submit_paper: approval_required
   spend_money: approval_required
   modify_production: approval_required
-
