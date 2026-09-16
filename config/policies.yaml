@@ -1,0 +1,21 @@
+default: deny
+actions:
+  search_literature: autonomous
+  read_repository: autonomous
+  summarize_meeting: autonomous
+  create_task: autonomous
+  draft_email: autonomous
+  draft_paper_section: autonomous
+  create_git_branch: autonomous_logged
+  run_local_analysis: autonomous_logged
+  delegate_codex_workspace_write: autonomous_logged
+  send_email: approval_required
+  modify_calendar: approval_required
+  join_zoom: approval_required
+  speak_in_meeting: approval_required
+  open_pull_request: approval_required
+  merge_pull_request: approval_required
+  submit_paper: approval_required
+  spend_money: approval_required
+  modify_production: approval_required
+
